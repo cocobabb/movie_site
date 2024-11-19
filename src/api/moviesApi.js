@@ -1,7 +1,7 @@
 import api from "./axios";
 
 const moviesApi = {
-  getDeatils: async () => {
+  getDetails: async (movieId) => {
     const response = await api.get(`/${movieId}`);
     return response.data;
   },

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieSet from "../components/MovieSet";
 import movieListApi from "../api/movieListApi";
+import { useParams } from "react-router-dom";
 
 export default function main() {
   const [nowPlaying, setNowPlaying] = useState();
@@ -50,7 +51,7 @@ export default function main() {
         {nowPlaying?.map((now) => {
           const { id, title } = now;
           return (
-            <li>
+            <li key={id}>
               <MovieSet id={id} title={title}></MovieSet>
             </li>
           );
@@ -65,7 +66,7 @@ export default function main() {
         {popular?.map((p) => {
           const { id, title } = p;
           return (
-            <li>
+            <li key={id}>
               <MovieSet id={id} title={title}></MovieSet>
             </li>
           );
@@ -80,7 +81,7 @@ export default function main() {
         {topRated?.map((t) => {
           const { id, title } = t;
           return (
-            <li>
+            <li key={id}>
               <MovieSet id={id} title={title}></MovieSet>
             </li>
           );
