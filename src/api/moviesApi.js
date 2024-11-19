@@ -5,7 +5,7 @@ const moviesApi = {
     const response = await api.get(`/${movieId}`);
     return response.data;
   },
-  getReviews: async () => {
+  getReviews: async (movieId) => {
     const response = await api.get(`/${movieId}/reviews`);
     return response.data;
   },
