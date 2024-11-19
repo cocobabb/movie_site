@@ -10,3 +10,4 @@ const moviesApi = {
     return response.data;
   },
 };
+export default moviesApi;

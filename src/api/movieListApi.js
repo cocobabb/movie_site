@@ -14,3 +14,4 @@ const movieListApi = {
     return response.data;
   },
 };
+export default movieListApi;
