@@ -15,7 +15,6 @@ export default function BasicHeader() {
           <LoginBtn
             onClick={() => {
               dispatch(logout());
-              navigate(-1);
             }}
           >
             로그아웃
