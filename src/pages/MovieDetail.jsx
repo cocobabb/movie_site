@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import moviesApi from "../api/moviesApi";
 import { useParams } from "react-router-dom";
+import MovieSet from "../components/MovieSet";
 
 export default function MovieDetail() {
   const [movie, setMovie] = useState();
@@ -46,8 +47,9 @@ export default function MovieDetail() {
           src={`${import.meta.env.VITE_API_IMG}${movie.backdrop_path}`}
           alt=""
         />
+
         <ul>
-          장르:
+          장르
           {movie.genres.map((genre) => {
             return <li key={movie.id}>{genre.name}</li>;
           })}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MovieSet from "../components/MovieSet";
 import movieListApi from "../api/movieListApi";
-import { useParams } from "react-router-dom";
 
 export default function main() {
   const [nowPlaying, setNowPlaying] = useState();
@@ -49,10 +48,10 @@ export default function main() {
       <div>현재 상영 중</div>
       <ul>
         {nowPlaying?.map((now) => {
-          const { id, title } = now;
+          const { id, title, backdrop_path } = now;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
             </li>
           );
         })}
@@ -64,10 +63,10 @@ export default function main() {
       <div>인기있는</div>
       <ul>
         {popular?.map((p) => {
-          const { id, title } = p;
+          const { id, title, backdrop_path } = p;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
             </li>
           );
         })}
@@ -79,10 +78,10 @@ export default function main() {
       <div>순위</div>
       <ul>
         {topRated?.map((t) => {
-          const { id, title } = t;
+          const { id, title, backdrop_path } = t;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
             </li>
           );
         })}
