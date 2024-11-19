@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { login, logout } from "../store/slices/loginSlice";
+import { logout } from "../store/slices/loginSlice";
 import { useNavigate } from "react-router-dom";
+import LoginBtn from "../pages/LoginBtn";
 
 export default function BasicHeader() {
   const { isLogin } = useSelector((state) => state.isLogin);
@@ -10,16 +11,19 @@ export default function BasicHeader() {
   return (
     <header>
       {isLogin ? (
-        <button onClick={() => dispatch(logout)}>로그아웃</button>
+        <>
+          <LoginBtn
+            onClick={() => {
+              dispatch(logout());
+              navigate(-1);
+            }}
+          >
+            로그아웃
+          </LoginBtn>
+          <LoginBtn onClick={() => navigate("/myPage")}>마이페이지</LoginBtn>
+        </>
       ) : (
-        <button
-          onClick={() => {
-            dispatch(login);
-            navigate("/login");
-          }}
-        >
-          로그인
-        </button>
+        <LoginBtn onClick={() => navigate("/login")}>로그인</LoginBtn>
       )}
     </header>
   );
