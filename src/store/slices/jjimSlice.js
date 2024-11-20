@@ -16,7 +16,7 @@ const jjimSlice = createSlice({
       state.datas.unshift(action.payload);
     },
     removeItem: (state, action) => {
-      state.datas = state.datas.filter((item) => item.id !== state.payload);
+      state.datas = state.datas.filter((item) => item.id !== action.payload);
     },
   },
 });

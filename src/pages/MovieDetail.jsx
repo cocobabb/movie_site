@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import moviesApi from "../api/moviesApi";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem } from "../store/slices/jjimSlice";
+import { addItem, removeItem } from "../store/slices/jjimSlice";
 
 export default function MovieDetail() {
   const [movie, setMovie] = useState();
@@ -15,6 +15,13 @@ export default function MovieDetail() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  let bookMarkCheck = false;
+  datas.forEach((data) => {
+    if (data.id === movieId) {
+      return (bookMarkCheck = true);
+    }
+  });
 
   useEffect(() => {
     async function fetchGetMovie() {
@@ -68,40 +75,47 @@ export default function MovieDetail() {
         </div>
       </div>
       <div>
-        <button
-          className={datas.map((data) =>
-            data.id === movieId ? "changePink text-white" : ""
-          )}
-          style={{
-            border: "solid black 1px",
-            width: 100,
-            height: 100,
-            textAlign: "center",
-          }}
-          onClick={() => {
-            const newItem = {
-              id: movieId,
-              title: movie.title,
-              imgUrl: movie.backdrop_path,
-            };
-
-            if (isLogin) {
-              dispatch(addItem(newItem));
-            } else {
-              alert("로그인 후 사용 가능한 기능입니다.");
-              navigate("/login");
-            }
-            // 특정한 조건에 따라 실행되야할 것이 다른 경우는 조건문 이용
-            // 삼항연산자는 true, false 두가지 경우의 수에 따라
-            // 실행되어야 할 경우 쓰는 게 좋다.
-            // isLogin?
-            // (dispatch(addItem(newItem)))
-            // :
-            // (alert('로그인 후 사용 가능한 기능입니다.'))
-          }}
-        >
-          찜
-        </button>
+        {isLogin && bookMarkCheck ? (
+          <button
+            style={{
+              border: "solid black 1px",
+              width: 100,
+              height: 100,
+              textAlign: "center",
+              backgroundColor: "pink",
+              color: "white",
+            }}
+            onClick={() => dispatch(removeItem(movieId))}
+          >
+            찜
+          </button>
+        ) : (
+          <>
+            <button
+              style={{
+                border: "solid black 1px",
+                width: 100,
+                height: 100,
+                textAlign: "center",
+              }}
+              onClick={() => {
+                const newItem = {
+                  id: movieId,
+                  title: movie.title,
+                  imgUrl: movie.backdrop_path,
+                };
+                if (isLogin) {
+                  dispatch(addItem(newItem));
+                } else if (!isLogin) {
+                  alert("해당 기능은 로그인 시 이용 가능합니다.");
+                  navigate("/login");
+                }
+              }}
+            >
+              찜
+            </button>
+          </>
+        )}
         <ul>
           후기
           {reviews?.map((review) => {
