@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* 내가 작성한 css */
+.changePink {
+  background-color: pink;
+}
+.text-white {
+  color: white;
+}

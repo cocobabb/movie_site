@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import LoginBtn from "../pages/LoginBtn";
 
 export default function BasicHeader() {
-  const { isLogin } = useSelector((state) => state.isLogin);
+  const isLoginData = useSelector((state) => state.isLogin);
+  const { isLogin } = isLoginData;
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -2,9 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/slices/loginSlice";
 import { useNavigate } from "react-router-dom";
 import LoginBtn from "../pages/LoginBtn";
+import MovieSet from "../components/MovieSet";
 
 export default function MyPage() {
   const { isLogin } = useSelector((state) => state.isLogin);
+  const { datas } = useSelector((state) => state.jjim);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   return (
@@ -25,6 +28,10 @@ export default function MyPage() {
       </header>
       <h1>마이 페이지</h1>
       <hr />
+      {datas?.map((data) => {
+        const { id, title, imgUrl } = data;
+        return <MovieSet id={id} title={title} imgUrl={imgUrl}></MovieSet>;
+      })}
     </>
   );
 }
