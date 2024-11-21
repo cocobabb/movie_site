@@ -9,11 +9,11 @@ export default function Login() {
   const dispatch = useDispatch();
 
   return (
-    <>
-      <div>아이디</div>
-      <input type="text" />
-      <div>비밀번호</div>
-      <input type="text" />
+    <div className="loginContainer">
+      <h1>아이디</h1>
+      <input className="loginBlank" type="text" />
+      <h1>비밀번호</h1>
+      <input className="loginBlank" type="text" />
       <LoginBtn
         onClick={() => {
           dispatch(login());
@@ -22,6 +22,6 @@ export default function Login() {
       >
         로그인
       </LoginBtn>
-    </>
+    </div>
   );
 }

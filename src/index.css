@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,12 +65,67 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
 /* 내가 작성한 css */
+
 .changePink {
   background-color: pink;
 }
 .text-white {
   color: white;
+}
+li {
+  list-style: none;
+  margin-right: 3%;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.movieName {
+  font-size: large;
+  font-weight: bold;
+}
+.loginBtn {
+  display: block;
+  margin-top: 30px;
+  width: 110px;
+  height: 60px;
+  margin-right: 15px;
+
+  font-size: large;
+}
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 800px;
+  align-items: center;
+}
+.loginBlank {
+  width: 600px;
+  height: 50px;
+}
+.basicHeaderContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+.isLoginHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+.mypageHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+.mypageMovies {
+  display: flex;
+  flex-wrap: wrap;
+}
+.categoryPage {
+  display: flex;
+  flex-wrap: wrap;
 }

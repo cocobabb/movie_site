@@ -8,12 +8,12 @@ export default function MovieSet({ id, title, imgUrl }) {
       <img
         src={`${import.meta.env.VITE_API_IMG}${imgUrl}`}
         alt=""
-        style={{ border: "solid black 1px", width: 100, height: 100 }}
+        // style={{ border: "solid black 1px", width: 100, height: 100 }}
         onClick={() => {
           navigate(`/${id}`);
         }}
       />
-      <div>{title}</div>
+      <div className="movieName">{title}</div>
     </>
   );
 }

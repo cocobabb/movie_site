@@ -66,7 +66,7 @@ export default function MovieDetail() {
         <ul>
           장르
           {movie?.genres.map((genre) => {
-            return <li key={movie.id}>{genre.name}</li>;
+            return <li key={genre.id}>{genre.name}</li>;
           })}
         </ul>
         <div>
@@ -122,7 +122,7 @@ export default function MovieDetail() {
             const { author_details, content } = review;
 
             return (
-              <li>
+              <li key={author_details.username}>
                 <span>{author_details.username}</span>
                 <p>{content}</p>
               </li>

@@ -12,7 +12,7 @@ export default function MyPage() {
   const navigate = useNavigate();
   return (
     <>
-      <header>
+      <header className="mypageHeader">
         {isLogin ? (
           <LoginBtn
             onClick={() => {
@@ -28,10 +28,17 @@ export default function MyPage() {
       </header>
       <h1>마이 페이지</h1>
       <hr />
-      {datas?.map((data) => {
-        const { id, title, imgUrl } = data;
-        return <MovieSet id={id} title={title} imgUrl={imgUrl}></MovieSet>;
-      })}
+      <h3>내가 찜한 영화</h3>
+      <ul className="mypageMovies">
+        {datas?.map((data) => {
+          const { id, title, imgUrl } = data;
+          return (
+            <li key={id}>
+              <MovieSet id={id} title={title} imgUrl={imgUrl}></MovieSet>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }

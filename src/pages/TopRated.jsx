@@ -19,7 +19,7 @@ export default function TopRated() {
   return (
     <>
       <h1>순위높은 영화</h1>
-      <ul>
+      <ul className="categoryPage">
         {topRated?.map((t) => {
           const { id, title, backdrop_path } = t;
           return (

@@ -10,9 +10,9 @@ export default function BasicHeader() {
   const navigate = useNavigate();
 
   return (
-    <header>
+    <header className="basicHeaderContainer">
       {isLogin ? (
-        <>
+        <div className="isLoginHeader">
           <LoginBtn
             onClick={() => {
               dispatch(logout());
@@ -20,8 +20,9 @@ export default function BasicHeader() {
           >
             로그아웃
           </LoginBtn>
+
           <LoginBtn onClick={() => navigate("/myPage")}>마이페이지</LoginBtn>
-        </>
+        </div>
       ) : (
         <LoginBtn onClick={() => navigate("/login")}>로그인</LoginBtn>
       )}

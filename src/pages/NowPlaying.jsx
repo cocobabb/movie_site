@@ -19,7 +19,7 @@ export default function NowPlaying() {
   return (
     <>
       <h1>현재 상영 중인 영화</h1>
-      <ul>
+      <ul className="categoryPage">
         {nowPlaying?.map((now) => {
           const { id, title, backdrop_path } = now;
           return (

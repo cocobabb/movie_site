@@ -45,8 +45,8 @@ export default function main() {
 
   return (
     <>
-      <div>현재 상영 중</div>
-      <ul>
+      <h2>현재 상영 중</h2>
+      <ul className="main">
         {nowPlaying?.map((now) => {
           const { id, title, backdrop_path } = now;
           return (
@@ -60,8 +60,8 @@ export default function main() {
 
       <br />
       <br />
-      <div>인기있는</div>
-      <ul>
+      <h2>인기있는</h2>
+      <ul className="main">
         {popular?.map((p) => {
           const { id, title, backdrop_path } = p;
           return (
@@ -75,8 +75,8 @@ export default function main() {
 
       <br />
       <br />
-      <div>순위</div>
-      <ul>
+      <h2>순위</h2>
+      <ul className="main">
         {topRated?.map((t) => {
           const { id, title, backdrop_path } = t;
           return (

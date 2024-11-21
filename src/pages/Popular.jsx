@@ -19,7 +19,7 @@ export default function Popular() {
   return (
     <>
       <h1>인기있는 영화</h1>
-      <ul>
+      <ul className="categoryPage">
         {popular?.map((p) => {
           const { id, title, backdrop_path } = p;
           return (
