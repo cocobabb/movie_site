@@ -59,7 +59,12 @@ export default function main() {
           );
         })}
       </ul>
-      <button onClick={() => navigate("/now_playing")}>더보기</button>
+      <button
+        className="w-btn-outline w-btn-gray-outline"
+        onClick={() => navigate("/now_playing")}
+      >
+        더보기
+      </button>
 
       <br />
       <br />
@@ -74,7 +79,12 @@ export default function main() {
           );
         })}
       </ul>
-      <button onClick={() => navigate("/popular")}>더보기</button>
+      <button
+        className="w-btn-outline w-btn-gray-outline"
+        onClick={() => navigate("/popular")}
+      >
+        더보기
+      </button>
 
       <br />
       <br />
@@ -89,7 +99,12 @@ export default function main() {
           );
         })}
       </ul>
-      <button onClick={() => navigate("/top_rated")}>더보기</button>
+      <button
+        className="w-btn-outline w-btn-gray-outline"
+        onClick={() => navigate("/top_rated")}
+      >
+        더보기
+      </button>
     </>
   );
 }
