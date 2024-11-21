@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import MovieSet from "../components/MovieSet";
 import movieListApi from "../api/movieListApi";
+import { useNavigate } from "react-router-dom";
 
 export default function main() {
   const [nowPlaying, setNowPlaying] = useState();
   const [popular, setPopular] = useState();
   const [topRated, setTopRated] = useState();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchGetNowPlayingMovies() {
@@ -56,7 +59,7 @@ export default function main() {
           );
         })}
       </ul>
-      <a href="/now_playing">더보기</a>
+      <button onClick={() => navigate("/now_playing")}>더보기</button>
 
       <br />
       <br />
@@ -71,7 +74,7 @@ export default function main() {
           );
         })}
       </ul>
-      <a href="/popular">더보기</a>
+      <button onClick={() => navigate("/popular")}>더보기</button>
 
       <br />
       <br />
@@ -86,7 +89,7 @@ export default function main() {
           );
         })}
       </ul>
-      <a href="/top_rated">더보기</a>
+      <button onClick={() => navigate("/top_rated")}>더보기</button>
     </>
   );
 }
