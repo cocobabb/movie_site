@@ -31,10 +31,6 @@ const router = createBrowserRouter([
         element: <TopRated />,
       },
       {
-        path: "/top_rated",
-        element: <TopRated />,
-      },
-      {
         path: "/:movieId",
         element: <MovieDetail />,
       },

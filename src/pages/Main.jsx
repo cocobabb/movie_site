@@ -25,7 +25,7 @@ export default function main() {
   useEffect(() => {
     async function fetchGetPopularMovies() {
       try {
-        const data = await movieListApi.getNowPlayingMovies();
+        const data = await movieListApi.getPopularMovies();
         setPopular(data.results.slice(0, 5));
       } catch (error) {
         console.error(error);
@@ -35,15 +35,15 @@ export default function main() {
   }, []);
 
   useEffect(() => {
-    async function fetchGetTopRagedMovies() {
+    async function fetchGetTopRatedMovies() {
       try {
-        const data = await movieListApi.getNowPlayingMovies();
+        const data = await movieListApi.getTopRatedMovies();
         setTopRated(data.results.slice(0, 5));
       } catch (error) {
         console.error(error);
       }
     }
-    fetchGetTopRagedMovies();
+    fetchGetTopRatedMovies();
   }, []);
 
   return (

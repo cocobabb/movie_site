@@ -8,7 +8,7 @@ export default function Popular() {
   useEffect(() => {
     async function fetchGetPopularMovies() {
       try {
-        const data = await movieListApi.getNowPlayingMovies();
+        const data = await movieListApi.getPopularMovies();
         setPopular(data.results);
       } catch (error) {
         console.error(error);

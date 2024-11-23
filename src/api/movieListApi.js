@@ -9,7 +9,7 @@ const movieListApi = {
     const response = await api.get("/popular");
     return response.data;
   },
-  getTopRagedMovies: async () => {
+  getTopRatedMovies: async () => {
     const response = await api.get("/top_rated");
     return response.data;
   },

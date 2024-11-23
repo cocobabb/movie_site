@@ -8,7 +8,7 @@ export default function TopRated() {
   useEffect(() => {
     async function fetchGetTopRagedMovies() {
       try {
-        const data = await movieListApi.getNowPlayingMovies();
+        const data = await movieListApi.getTopRatedMovies();
         setTopRated(data.results);
       } catch (error) {
         console.error(error);

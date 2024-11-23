@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { login } from "../store/slices/loginSlice";
 import LoginBtn from "./LoginBtn";
 
