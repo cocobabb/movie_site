@@ -82,6 +82,9 @@ li {
   display: flex;
   flex-direction: row;
   padding: 0;
+  /* header의 navbar가 초과 된 이미지 크기를 맞추지 못함 */
+  /* 초과된 이미지 만큼의 스크롤 생성하여 ul tag안에 이미지 다 들어가게 함 */
+  overflow-x: auto; /* 수평 스크롤 허용 */
 }
 
 .movieName {
@@ -128,7 +131,11 @@ li {
   display: flex;
   flex-wrap: wrap;
 }
-
+/* header의 navbar가 초과 된 이미지 크기를 맞추지 못함
+이미지를 li tag 크기만큼으로 맞추는 방법 */
+/* li > img {
+  width: 100%;
+} */
 /* 버튼 */
 .w-btn-gray-outline {
   border: 3px solid #a3a1a1;
