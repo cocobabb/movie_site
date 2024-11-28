@@ -26,6 +26,8 @@ export default function BasicHeader() {
       ) : (
         <LoginBtn onClick={() => navigate("/login")}>로그인</LoginBtn>
       )}
+      <input type="text" name="" id="" />
+      <button onClick={() => navigate("/search")}>검색</button>
     </header>
   );
 }

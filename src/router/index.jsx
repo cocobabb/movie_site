@@ -8,6 +8,7 @@ import TopRated from "../pages/TopRated";
 import MovieDetail from "../pages/MovieDetail";
 import Login from "../pages/Login";
 import MyPage from "../pages/MyPage";
+import Search from "../pages/Search";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/top_rated",
         element: <TopRated />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
       {
         path: "/:movieId",
