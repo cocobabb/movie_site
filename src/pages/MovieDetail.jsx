@@ -58,10 +58,16 @@ export default function MovieDetail() {
     <>
       <div>
         <h2>{movie?.title}</h2>
-        <img
-          src={`${import.meta.env.VITE_API_IMG}${movie.poster_path}`}
-          alt=""
-        />
+        {movie.poster_path ? (
+          <img
+            src={`${import.meta.env.VITE_API_IMG}${movie.poster_path}`}
+            alt=""
+          />
+        ) : (
+          <div
+            style={{ width: 500, height: 750, backgroundColor: "lightgray" }}
+          ></div>
+        )}
         <p>{movie?.overview}</p>
         <ul>
           장르
@@ -102,7 +108,7 @@ export default function MovieDetail() {
                 const newItem = {
                   id: movieId,
                   title: movie.title,
-                  imgUrl: movie.backdrop_path,
+                  imgUrl: movie.poster_path,
                 };
                 if (isLogin) {
                   dispatch(addItem(newItem));
