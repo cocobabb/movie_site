@@ -21,10 +21,10 @@ export default function Popular() {
       <h1>인기있는 영화</h1>
       <ul className="categoryPage">
         {popular?.map((p) => {
-          const { id, title, backdrop_path } = p;
+          const { id, title, poster_path } = p;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={poster_path}></MovieSet>
             </li>
           );
         })}

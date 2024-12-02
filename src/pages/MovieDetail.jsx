@@ -59,7 +59,7 @@ export default function MovieDetail() {
       <div>
         <h2>{movie?.title}</h2>
         <img
-          src={`${import.meta.env.VITE_API_IMG}${movie.backdrop_path}`}
+          src={`${import.meta.env.VITE_API_IMG}${movie.poster_path}`}
           alt=""
         />
         <p>{movie?.overview}</p>

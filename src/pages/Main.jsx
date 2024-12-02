@@ -51,10 +51,10 @@ export default function main() {
       <h2>현재 상영 중</h2>
       <ul className="main">
         {nowPlaying?.map((now) => {
-          const { id, title, backdrop_path } = now;
+          const { id, title, poster_path } = now;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={poster_path}></MovieSet>
             </li>
           );
         })}
@@ -71,10 +71,10 @@ export default function main() {
       <h2>인기있는</h2>
       <ul className="main">
         {popular?.map((p) => {
-          const { id, title, backdrop_path } = p;
+          const { id, title, poster_path } = p;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={poster_path}></MovieSet>
             </li>
           );
         })}
@@ -91,10 +91,10 @@ export default function main() {
       <h2>순위</h2>
       <ul className="main">
         {topRated?.map((t) => {
-          const { id, title, backdrop_path } = t;
+          const { id, title, poster_path } = t;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={poster_path}></MovieSet>
             </li>
           );
         })}

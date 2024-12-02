@@ -21,10 +21,10 @@ export default function NowPlaying() {
       <h1>현재 상영 중인 영화</h1>
       <ul className="categoryPage">
         {nowPlaying?.map((now) => {
-          const { id, title, backdrop_path } = now;
+          const { id, title, poster_path } = now;
           return (
             <li key={id}>
-              <MovieSet id={id} title={title} imgUrl={backdrop_path}></MovieSet>
+              <MovieSet id={id} title={title} imgUrl={poster_path}></MovieSet>
             </li>
           );
         })}
