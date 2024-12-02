@@ -2,24 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function MovieSet({ id, title, imgUrl }) {
   const navigate = useNavigate();
-
-  if (!imgUrl) {
-    return (
-      <>
-        <div
-          className="movieSetContainer"
-          onClick={() => {
-            navigate(`/${id}`);
-          }}
-        >
-          <div
-            style={{ width: 500, height: 750, backgroundColor: "lightgray" }}
-          />
-          <div className="movieName">{title}</div>
-        </div>
-      </>
-    );
-  }
   return (
     <>
       <div
@@ -28,7 +10,13 @@ export default function MovieSet({ id, title, imgUrl }) {
           navigate(`/${id}`);
         }}
       >
-        <img src={`${import.meta.env.VITE_API_IMG}${imgUrl}`} alt="" />
+        {imgUrl ? (
+          <img src={`${import.meta.env.VITE_API_IMG}${imgUrl}`} alt="" />
+        ) : (
+          <div
+            style={{ width: 500, height: 750, backgroundColor: "lightgray" }}
+          ></div>
+        )}
         <div className="movieName">{title}</div>
       </div>
     </>
