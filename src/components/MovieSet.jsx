@@ -5,7 +5,6 @@ export default function MovieSet({ id, title, imgUrl }) {
   return (
     <>
       <div
-        className="movieSetContainer"
         onClick={() => {
           navigate(`/${id}`);
         }}
