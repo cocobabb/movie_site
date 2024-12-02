@@ -91,6 +91,13 @@ li {
   font-size: large;
   font-weight: bold;
 }
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 800px;
+  align-items: center;
+}
 .loginBtn {
   display: block;
   margin-top: 30px;
@@ -100,30 +107,41 @@ li {
 
   font-size: large;
 }
-.loginContainer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 800px;
-  align-items: center;
-}
 .loginBlank {
   width: 600px;
   height: 50px;
 }
-.basicHeaderContainer {
+.loginHeader {
   display: flex;
   justify-content: flex-end;
 }
 .isLoginHeader {
   display: flex;
-  justify-content: flex-end;
+}
+.searchHeader {
+  display: flex;
+  justify-content: center;
+
+  margin: 20px;
+}
+.searchBlank {
+  width: 500px;
+  height: 50px;
+}
+.searchBtn {
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
 }
 .mypageHeader {
   display: flex;
   justify-content: flex-end;
 }
 .mypageMovies {
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchMovies {
   display: flex;
   flex-wrap: wrap;
 }

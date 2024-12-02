@@ -13,46 +13,50 @@ export default function BasicHeader() {
   const navigate = useNavigate();
 
   return (
-    <header className="basicHeaderContainer">
-      {isLogin ? (
-        <div className="isLoginHeader">
-          <LoginBtn
-            onClick={() => {
-              dispatch(logout());
-            }}
-          >
-            로그아웃
-          </LoginBtn>
+    <header>
+      <div className="loginHeader">
+        {isLogin ? (
+          <div className="isLoginHeader">
+            <LoginBtn
+              onClick={() => {
+                dispatch(logout());
+              }}
+            >
+              로그아웃
+            </LoginBtn>
 
-          <LoginBtn onClick={() => navigate("/myPage")}>마이페이지</LoginBtn>
-        </div>
-      ) : (
-        <LoginBtn onClick={() => navigate("/login")}>로그인</LoginBtn>
-      )}
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          setInputVal(e.target.value);
-        }}
-      >
-        <input
-          type="search"
-          name=""
-          id=""
-          onChange={(e) => setInputVal(e.target.value)}
-        />
-        <button
-          onClick={() => {
-            if (inputVal) {
-              navigate(`/search?query=${inputVal}`);
-            } else {
-              alert("검색창에 검색어를 입력해주세요");
-            }
+            <LoginBtn onClick={() => navigate("/myPage")}>마이페이지</LoginBtn>
+          </div>
+        ) : (
+          <LoginBtn onClick={() => navigate("/login")}>로그인</LoginBtn>
+        )}
+      </div>
+      <div className="searchHeader">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setInputVal(e.target.value);
           }}
         >
-          검색
-        </button>
-      </form>
+          <input className="searchBlank"
+            type="search"
+            name=""
+            id=""
+            onChange={(e) => setInputVal(e.target.value)}
+          />
+          <button className="searchBtn"
+            onClick={() => {
+              if (inputVal) {
+                navigate(`/search?query=${inputVal}`);
+              } else {
+                alert("검색창에 검색어를 입력해주세요");
+              }
+            }}
+          >
+            검색
+          </button>
+        </form>
+      </div>
     </header>
   );
 }

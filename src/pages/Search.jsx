@@ -23,9 +23,7 @@ export default function Search() {
 
   return (
     <>
-      <div>Search</div>
-      <div>{searchParams.get("query")}</div>
-      <ul>
+      <ul className="searchMovies">
         {searchMovies?.map((search) => {
           const { id, title, poster_path } = search;
           return (
