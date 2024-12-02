@@ -14,8 +14,6 @@ export default function BasicHeader() {
 
   return (
     <header className="basicHeaderContainer">
-      {/* <input type="button" onClick={navigate("/")} /> */}
-
       {isLogin ? (
         <div className="isLoginHeader">
           <LoginBtn
@@ -43,7 +41,15 @@ export default function BasicHeader() {
           id=""
           onChange={(e) => setInputVal(e.target.value)}
         />
-        <button onClick={() => navigate(`/search?query=${inputVal}`)}>
+        <button
+          onClick={() => {
+            if (inputVal) {
+              navigate(`/search?query=${inputVal}`);
+            } else {
+              alert("검색창에 검색어를 입력해주세요");
+            }
+          }}
+        >
           검색
         </button>
       </form>
