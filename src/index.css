@@ -77,11 +77,12 @@ button:focus-visible {
 li {
   list-style: none;
   margin-right: 3%;
-  margin-top: 3%;
 }
 img {
   width: 500px;
   height: 750px;
+
+  margin-top: 15%;
 }
 .main {
   display: flex;

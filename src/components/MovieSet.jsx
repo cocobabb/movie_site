@@ -13,7 +13,12 @@ export default function MovieSet({ id, title, imgUrl }) {
           <img src={`${import.meta.env.VITE_API_IMG}${imgUrl}`} alt="" />
         ) : (
           <div
-            style={{ width: 500, height: 750, backgroundColor: "lightgray" }}
+            style={{
+              width: 500,
+              height: 750,
+              marginTop: 75,
+              backgroundColor: "lightgray",
+            }}
           ></div>
         )}
         <div className="movieName">{title}</div>
